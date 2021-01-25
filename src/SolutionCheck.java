@@ -1,13 +1,37 @@
+import java.math.BigInteger;
+import java.util.List;
+
 public class SolutionCheck {
+
+
+    public static ListNode toList(String[] temp, ListNode lst){
+
+        int length = 0;
+
+        lst = new ListNode(Integer.parseInt(temp[length]));
+        length += 1;
+        while(length < temp.length) {
+            lst = new ListNode(Integer.parseInt(temp[length]), lst);
+            length += 1;
+        }
+        return lst;
+    }
+
     public static void main(String[] args) {
-        Solution2 sol = new Solution2();
+        LeetCode2 lt = new LeetCode2();
 
-        String begin = "hit";
-        String target = "cog";
-        String[] words = {"hot", "dot", "dog", "lot", "log", "cog"};
+        ListNode box1 = new ListNode();
+        ListNode box2 = new ListNode();
 
-        int result = sol.solution(begin, target, words);
+        String [] first = {"5","6","4"};
+        String [] second = {"1","0","0","0","0","0", "0","0","1"};
 
-        System.out.println(result);
+        ListNode lst = toList(first, box1);
+        ListNode lst6 = toList(second, box2);
+
+        System.out.println(lt.backnumber(lt.addTwoNumbers(lst, lst6)));
+
+
+
     }
 }
